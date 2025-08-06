@@ -1,0 +1,42 @@
+﻿@model IEnumerable<AgenciaDeDavid.Models.Destino>
+
+@{
+    ViewData["Title"] = "Lista de Destino";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Crear nuevo destino</a>
+    <a asp-action="ExportarCSV" class="btn btn-secondary">Exportar a CSV</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Ciudad</th>
+            <th>Lugar Turístico</th>
+            <th>País</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DestinoID</td>
+                <td>@item.Nombre</td>
+                <td>@item.Ciudad</td>
+                <td>@item.LugarTuristico</td>
+                <td>@item.Pais?.Nombre</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.DestinoID" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="Details" asp-route-id="@item.DestinoID" class="btn btn-sm btn-info">Detalles</a>
+                    <a asp-action="Delete" asp-route-id="@item.DestinoID" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

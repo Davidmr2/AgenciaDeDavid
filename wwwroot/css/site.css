@@ -1,22 +1,90 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+/* === ESTILO GENERAL === */
 body {
-  margin-bottom: 60px;
+    background-color: #fff5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* === TÍTULOS ROJOS ELEGANTES === */
+h1, h2, h3 {
+    color: #c0392b;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* === CONTENEDOR PRINCIPAL === */
+.container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+/* === TABLAS ESTILIZADAS === */
+.table {
+    background-color: #fff0f0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+    .table th {
+        background-color: #e74c3c;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .table td {
+        vertical-align: middle;
+        text-align: center;
+    }
+
+/* === BOTONES MODERNOS === */
+.btn {
+    border-radius: 30px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #e74c3c;
+    color: white;
+}
+
+    .btn-primary:hover {
+        background-color: #c0392b;
+        color: white;
+    }
+
+/* === BOTÓN SECUNDARIO: VOLVER === */
+.btn-volver {
+    background-color: #a5a5a5;
+    color: white;
+    border-radius: 30px;
+    padding: 0.4rem 1.2rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-volver:hover {
+        background-color: #7d7d7d;
+        color: white;
+    }
+
+/* === FOOTER ELEGANTE === */
+footer {
+    background-color: #e74c3c;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0 0 12px 12px;
+    margin-top: 3rem;
+    font-size: 0.95rem;
 }

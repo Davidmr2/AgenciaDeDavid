@@ -1,0 +1,54 @@
+﻿@model IEnumerable<AgenciaDeDavid.Models.Tour>
+
+@{
+    ViewData["Title"] = "Lista de Tour";
+}
+
+<h1 class="text-primary">@ViewData["Title"]</h1>
+
+<div class="alert alert-info">
+    <strong>Bienvenido/a 😊</strong> Aquí puedes gestionar los tours disponibles en la agencia.
+</div>
+
+<a asp-action="Create" class="btn btn-success mb-3">Agregar nuevo tour</a>
+<p>
+    <a class="btn btn-success" asp-action="ExportarCSV">Exportar a CSV</a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-primary">
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Fin</th>
+            <th>País</th>
+            <th>Destino</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.Precio.ToString("C")</td>
+                <td>@item.FechaInicio.ToShortDateString()</td>
+                <td>@item.FechaFin.ToShortDateString()</td>
+                <td>@item.Pais?.Nombre</td>
+                <td>@item.Destino?.Nombre</td>
+
+                <td>@item.Precio.ToString("C")</td>
+                <td>@item.ITBIS.ToString("C")</td>
+                <td>@item.Duracion</td>
+                <td>@item.FechaFin.ToString("g")</td>
+                <td>@item.Estado</td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

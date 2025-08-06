@@ -1,8 +1,40 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Bienvenido";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container text-center">
+    <h1 class="display-4 mb-4">🌍 ¡Bienvenido a la Agencia de David!</h1>
+    <p class="lead">Tu próxima aventura comienza aquí. Explora nuestros tours, descubre destinos increíbles y conoce nuevos países.</p>
+
+    <div class="row mt-5">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-danger fw-bold">🌴 Tours</h5>
+                    <p class="card-text">Explora todos los paquetes turísticos disponibles.</p>
+                    <a asp-controller="Tours" asp-action="Index" class="btn btn-primary">Ver Tours</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-danger fw-bold">🏞️ Destinos</h5>
+                    <p class="card-text">Lugares increíbles que te esperan alrededor del mundo.</p>
+                    <a asp-controller="Destino" asp-action="Index" class="btn btn-primary">Ver Destino</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-danger fw-bold">🌐 Países</h5>
+                    <p class="card-text">Descubre los países que forman parte de nuestras rutas.</p>
+                    <a asp-controller="Pais" asp-action="Index" class="btn btn-primary">Ver Países</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

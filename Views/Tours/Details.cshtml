@@ -1,0 +1,88 @@
+﻿@model AgenciaDeDavid.Models.Tour
+
+@{
+    ViewData["Title"] = "Detalles del Tour";
+}
+
+<h1>Detalles del Tour</h1>
+
+<div>
+    <h4>Tour</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+        <dd class="col-sm-9">
+            @Model.Precio.ToString("C")
+        </dd>
+
+        <dt class="col-sm-3">
+            ITBIS (18%)
+        </dt>
+        <dd class="col-sm-9">
+            @Model.ITBIS.ToString("C")
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </dt>
+        <dd class="col-sm-9">
+            @Model.FechaInicio.ToString("g")
+        </dd>
+
+        <dt class="col-sm-3">
+            Hora de Inicio
+        </dt>
+        <dd class="col-sm-9">
+            @Model.HoraInicio
+        </dd>
+
+        <dt class="col-sm-3">
+            Fecha y Hora de Fin
+        </dt>
+        <dd class="col-sm-9">
+            @Model.FechaFin.ToString("g")
+        </dd>
+
+        <dt class="col-sm-3">
+            Duración
+        </dt>
+        <dd class="col-sm-9">
+            @Model.Duracion
+        </dd>
+
+        <dt class="col-sm-3">
+            Estado
+        </dt>
+        <dd class="col-sm-9">
+            @Model.Estado
+        </dd>
+
+        <dt class="col-sm-3">
+            País
+        </dt>
+        <dd class="col-sm-9">
+            @Model.Pais?.Nombre
+        </dd>
+
+        <dt class="col-sm-3">
+            Destino
+        </dt>
+        <dd class="col-sm-9">
+            @Model.Destino?.GetCiudad()
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,63 @@
+﻿
+   @model AgenciaDeDavid.Models.Tour
+
+@{
+    ViewData["Title"] = "Crear Tour";
+}
+
+<h1>Crear Tour</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PaisID" class="control-label"></label>
+                <select asp-for="PaisID" class="form-control" asp-items="ViewBag.PaisID"></select>
+                <span asp-validation-for="PaisID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DestinoID" class="control-label"></label>
+                <select asp-for="DestinoID" class="form-control" asp-items="ViewBag.DestinoID"></select>
+                <span asp-validation-for="DestinoID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Precio" class="control-label"></label>
+                <input asp-for="Precio" class="form-control" />
+                <span asp-validation-for="Precio" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FechaInicio" class="control-label"></label>
+                <input asp-for="FechaInicio" class="form-control" type="datetime-local" />
+                <span asp-validation-for="FechaInicio" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FechaFin" class="control-label"></label>
+                <input asp-for="FechaFin" class="form-control" type="datetime-local" />
+                <span asp-validation-for="FechaFin" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a asp-action="Index" class="btn btn-secondary">Volver</a>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
